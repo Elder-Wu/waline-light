@@ -78,6 +78,11 @@
       font-size: 0.875em;
       line-height: 1.2;
       text-decoration: none;
+
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
     }
   }
 
@@ -106,9 +111,9 @@
   }
 
   .wl-time {
-    margin-inline-end: 0.875em;
     color: var(--waline-info-color);
     font-size: 0.75em;
+    flex: none;
   }
 
   .wl-meta {
