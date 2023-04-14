@@ -19,11 +19,11 @@ export default function () {
     e.preventDefault();
 
     const display_name = e.target.screenName.value;
-    const url = e.target.url.value;
-    const label = e.target.label.value;
+    const url = 'empty';
+    const label = '';
 
     if (!display_name || !url) {
-      return alert(t('nickname and homepage are required'));
+      return alert('昵称不能为空');
     }
 
     setProfileUpdating(true);
@@ -132,44 +132,6 @@ export default function () {
                         type="text"
                         className="text"
                         defaultValue={user.display_name}
-                      />
-                      <p className="description"></p>
-                    </li>
-                  </ul>
-
-                  <ul className="typecho-option">
-                    <li>
-                      <label className="typecho-label" htmlFor="url-0-2">
-                        {t('homepage')}
-                      </label>
-                      <input
-                        id="url-0-2"
-                        name="url"
-                        type="text"
-                        className="text"
-                        defaultValue={user.url}
-                      />
-                      <p className="description">
-                        <Trans
-                          i18nKey="homepage tips"
-                          defaults="Current users' homepage. It must be start with <code>http://</code> or <code>https://</code>."
-                          components={{ code: <code /> }}
-                        />
-                      </p>
-                    </li>
-                  </ul>
-
-                  <ul className="typecho-option">
-                    <li>
-                      <label className="typecho-label" htmlFor="url-0-2">
-                        {t('exclusive label')}
-                      </label>
-                      <input
-                        id="url-0-2"
-                        name="label"
-                        type="text"
-                        className="text"
-                        defaultValue={user.label}
                       />
                       <p className="description"></p>
                     </li>

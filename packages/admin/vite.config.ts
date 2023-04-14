@@ -16,11 +16,14 @@ export default defineConfig({
   },
 
   plugins: [
-    react(),
+    react({ fastRefresh: false }),
     // eslint-disable-next-line
     reiconify(),
     cssInjectedByJsPlugin(),
   ],
+  worker: {
+    plugins: [react()],
+  },
 
   build: {
     lib: {

@@ -37,7 +37,7 @@ export default function () {
     if (!email) {
       return setError(t('please input email'));
     }
-    const link = e.target.link.value;
+    const link = '#';
     const password = e.target.password.value;
     const passwordAgain = e.target['password-again'].value;
 
@@ -104,18 +104,6 @@ export default function () {
                 id="email"
                 name="email"
                 placeholder={t('email')}
-                className="text-l w-100"
-              />
-            </p>
-            <p>
-              <label htmlFor="link" className="sr-only">
-                {t('website')}
-              </label>
-              <input
-                type="text"
-                id="link"
-                name="link"
-                placeholder={t('website')}
                 className="text-l w-100"
               />
             </p>
