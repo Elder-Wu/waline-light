@@ -2,6 +2,8 @@
   position: relative;
   display: flex;
   margin-bottom: 0.75em;
+  background: white;
+  padding: 5px;
 }
 
 .wl-close {
@@ -21,26 +23,22 @@
 
 .wl-login-info {
   max-width: 80px;
-  margin-top: 0.75em;
   text-align: center;
+  margin-right: 5px;
 }
 
 .wl-logout-btn {
-  position: absolute;
-  top: -10px;
-  inset-inline-end: -10px;
-
-  padding: 3px;
-  border: none;
-
-  background: transparent;
-
-  line-height: 0;
-
+  padding: 5px 5px;
+  color: white;
+  font-size: 1px;
+  background: #212121;
+  border-radius: 2px;
   cursor: pointer;
 }
 
 .wl-avatar {
+  display: flex;
+  flex-direction: column;
   position: relative;
 
   width: var(--waline-avatar-size);
@@ -62,24 +60,24 @@
 }
 
 .wl-login-nick {
-  display: block;
   color: var(--waline-theme-color);
   font-size: 0.75em;
   word-break: break-all;
+
+  line-height: 1.2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-top: 3px;
 }
 
 .wl-panel {
   position: relative;
-
-  flex-shrink: 1;
-
-  width: 100%;
-  margin: 0.5em;
-  border: var(--waline-border);
-  border-radius: 0.75em;
-
-  background: var(--waline-bgcolor);
-  box-shadow: var(--waline-box-shadow);
+  display: flex;
+  flex-direction: column;
+  flex:auto;
+  margin: 0;
 }
 
 .wl-header {
@@ -155,31 +153,20 @@
 .wl-editor {
   position: relative;
 
-  width: calc(100% - 1em);
   min-height: 8.75em;
-  margin: 0.75em 0.5em;
-  border-radius: 0.5em;
-
+  margin: 0;
+  border-radius: 0;
   background: transparent;
+  border: 1px lightgray solid;
+  outline: none;
 
   font-size: 0.875em;
 
   resize: vertical;
 }
 
-.wl-editor,
-.wl-input {
-  max-width: 100%;
-  border: none;
-
-  color: var(--waline-color);
-  outline: none;
-
-  transition: all 0.25s ease;
-
-  &:focus {
-    background: var(--waline-bgcolor-light);
-  }
+.wl-editor::placeholder{
+  color: lightgrey;
 }
 
 .wl-preview {
@@ -211,11 +198,13 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  margin: 0.5em 0.75em;
+  margin-top: 5px;
+  justify-content: end;
 }
 
 .wl-actions {
-  display: flex;
+  display: none;
+  visibility: hidden;
   flex: 2;
   align-items: center;
 }
@@ -261,7 +250,6 @@
 
 .wl-info {
   display: flex;
-  flex: 3;
   align-items: center;
   justify-content: flex-end;
 

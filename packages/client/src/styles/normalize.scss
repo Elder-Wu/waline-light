@@ -1,6 +1,7 @@
 [data-waline] {
   font-size: var(--waline-font-size);
   text-align: start;
+  background: white;
 
   [dir='rtl'] & {
     direction: rtl;

@@ -6,7 +6,7 @@
   margin-bottom: 0;
   padding: 0.5em 1em;
   border: 1px solid var(--waline-border-color);
-  border-radius: 0.5em;
+  border-radius: 2px;
 
   background: transparent;
   color: var(--waline-color);
@@ -64,4 +64,9 @@
   svg {
     margin: 0 auto;
   }
+}
+
+.wl-loading-tip {
+  opacity: 0.618;
+  font-size: 10px;
 }

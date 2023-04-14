@@ -5,69 +5,27 @@
       class="wl-login-info"
     >
       <div class="wl-avatar">
-        <button
-          type="submit"
-          class="wl-logout-btn"
-          :title="locale.logout"
-          @click="onLogout"
-        >
-          <CloseIcon :size="14" />
-        </button>
-
-        <a
-          href="#"
-          class="wl-login-nick"
-          aria-label="Profile"
-          :title="locale.profile"
-          @click="onProfile"
-        >
-          <img :src="userInfo.avatar" alt="avatar" />
-        </a>
+        <img :src="userInfo.avatar" alt="avatar" />
       </div>
 
-      <a
-        href="#"
+      <div
         class="wl-login-nick"
         aria-label="Profile"
         :title="locale.profile"
-        @click="onProfile"
         v-text="userInfo.display_name"
-      />
+      ></div>
+
+      <span
+        type="submit"
+        class="wl-logout-btn"
+        :title="locale.logout"
+        @click="onLogout"
+      >
+        退出
+      </span>
     </div>
 
     <div class="wl-panel">
-      <div
-        v-if="config.login !== 'force' && config.meta.length && !isLogin"
-        class="wl-header"
-        :class="`item${config.meta.length}`"
-      >
-        <div v-for="kind in config.meta" :key="kind" class="wl-header-item">
-          <label
-            :for="`wl-${kind}`"
-            v-text="
-              locale[kind] +
-              (config.requiredMeta.includes(kind) || !config.requiredMeta.length
-                ? ''
-                : `(${locale.optional})`)
-            "
-          />
-
-          <input
-            :id="`wl-${kind}`"
-            :ref="
-              (element) => {
-                if (element) inputRefs[kind] = element as HTMLInputElement;
-              }
-            "
-            v-model="userMeta[kind]"
-            class="wl-input"
-            :class="`wl-${kind}`"
-            :name="kind"
-            :type="kind === 'mail' ? 'email' : 'text'"
-          />
-        </div>
-      </div>
-
       <textarea
         id="wl-edit"
         ref="editorRef"
@@ -611,28 +569,6 @@ const onLogout = (): void => {
   localStorage.setItem('WALINE_USER', 'null');
   sessionStorage.setItem('WALINE_USER', 'null');
   emit('log');
-};
-
-const onProfile = (event: Event): void => {
-  event.preventDefault();
-
-  const { lang, serverURL } = config.value;
-
-  const width = 800;
-  const height = 800;
-  const left = (window.innerWidth - width) / 2;
-  const top = (window.innerHeight - height) / 2;
-  const query = new URLSearchParams({
-    lng: lang,
-    token: userInfo.value.token,
-  });
-  const handler = window.open(
-    `${serverURL}/ui/profile?${query.toString()}`,
-    '_blank',
-    `width=${width},height=${height},left=${left},top=${top},scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no`
-  );
-
-  handler?.postMessage({ type: 'TOKEN', data: userInfo.value.token }, '*');
 };
 
 const popupHandler = (event: MouseEvent): void => {

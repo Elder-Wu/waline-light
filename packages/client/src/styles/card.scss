@@ -65,17 +65,18 @@
     // bfc to fix https://github.com/walinejs/waline/issues/1415
     overflow: hidden;
     line-height: 1.5;
+    display: flex;
+    align-items: center;
 
     .wl-nick {
       position: relative;
-
-      display: inline-block;
-
-      margin-inline-end: 0.5em;
+      margin: auto 0;
+      margin-inline-end: 0.2em;
+      padding-top: 1px;
 
       font-weight: bold;
       font-size: 0.875em;
-      line-height: 1;
+      line-height: 1.2;
       text-decoration: none;
     }
   }
@@ -85,16 +86,23 @@
   }
 
   .wl-badge {
+    flex: none;
     display: inline-block;
 
     margin-inline-end: 1em;
     padding: 0 0.3em;
     border: 1px solid var(--waline-badge-color);
-    border-radius: 4px;
+    border-radius: 2px;
+    line-height: 1.2;
 
     color: var(--waline-badge-color);
 
     font-size: var(--waline-badge-font-size);
+  }
+
+  .wl-badge-for-admin {
+    color: orangered;
+    border-color: orangered;
   }
 
   .wl-time {
@@ -127,7 +135,9 @@
   }
 
   .wl-comment-actions {
-    float: right;
+    display: flex;
+    flex: 1;
+    justify-content: end;
     line-height: 1;
 
     [dir='rtl'] & {

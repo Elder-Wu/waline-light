@@ -53,6 +53,7 @@
     <template v-else>
       <div v-if="status === 'loading'" class="wl-loading">
         <LoadingIcon :size="30" />
+        <div class="wl-loading-tip">正在加载</div>
       </div>
 
       <div v-else-if="!data.length" class="wl-empty" v-text="i18n.sofa" />

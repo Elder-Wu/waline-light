@@ -1,7 +1,7 @@
 {
-  "name": "@waline/client",
-  "version": "2.14.9",
-  "description": "client for waline comment system",
+  "name": "waline-client-light",
+  "version": "2.14.9002",
+  "description": "client for waline comment system 精简版",
   "keywords": [
     "valine",
     "waline",
@@ -9,8 +9,7 @@
     "blog"
   ],
   "repository": {
-    "url": "https://github.com/walinejs/waline",
-    "directory": "packages/client"
+    "url": "https://github.com/Elder-Wu/waline-light"
   },
   "license": "MIT",
   "author": {
@@ -101,7 +100,8 @@
     "rollup": "rollup -c",
     "style": "pnpm style:main && pnpm style:meta",
     "style:main": "sass ./src/styles/index.scss ./dist/waline.css --style=compressed",
-    "style:meta": "sass ./src/styles/meta.scss ./dist/waline-meta.css --style=compressed"
+    "style:meta": "sass ./src/styles/meta.scss ./dist/waline-meta.css --style=compressed",
+    "publishToNPM": "pnpm prepublishOnly && npm publish"
   },
   "browserslist": {
     "production": [

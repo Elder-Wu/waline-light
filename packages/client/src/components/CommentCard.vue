@@ -8,20 +8,13 @@
 
     <div class="wl-card">
       <div class="wl-head">
-        <a
-          v-if="link"
-          class="wl-nick"
-          :href="link"
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-          >{{ comment.nick }}</a
-        >
+        <span v-if="link" class="wl-nick">{{ comment.nick }}</span>
 
         <span v-else class="wl-nick">{{ comment.nick }}</span>
 
         <span
           v-if="comment.type === 'administrator'"
-          class="wl-badge"
+          class="wl-badge wl-badge-for-admin"
           v-text="locale.admin"
         />
 

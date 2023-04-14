@@ -8,7 +8,7 @@
   --waline-dark-grey: #666;
 
   // theme colors
-  --waline-theme-color: #27ae60;
+  --waline-theme-color: #212121;
   --waline-active-color: #2ecc71;
 
   // layout colors
@@ -30,7 +30,7 @@
 
   // badge
   --waline-badge-color: #3498db;
-  --waline-badge-font-size: 0.75em;
+  --waline-badge-font-size: 0.25em;
 
   // info
   --waline-info-bgcolor: #f8f8f8;
@@ -40,7 +40,7 @@
   // ====render choises====
   //   ** using border **
   --waline-border: 1px solid var(--waline-border-color);
-  --waline-avatar-radius: 50%;
+  --waline-avatar-radius: 5%;
   --waline-box-shadow: none;
 
   // ** using box-shadow **
