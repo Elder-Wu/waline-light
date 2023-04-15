@@ -30,7 +30,7 @@
 
   // badge
   --waline-badge-color: #3498db;
-  --waline-badge-font-size: 0.25em;
+  --waline-badge-font-size: 12px;
 
   // info
   --waline-info-bgcolor: #f8f8f8;
@@ -40,7 +40,7 @@
   // ====render choises====
   //   ** using border **
   --waline-border: 1px solid var(--waline-border-color);
-  --waline-avatar-radius: 5%;
+  --waline-avatar-radius: 50%;
   --waline-box-shadow: none;
 
   // ** using box-shadow **

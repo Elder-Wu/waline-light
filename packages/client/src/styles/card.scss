@@ -94,8 +94,8 @@
     flex: none;
     display: inline-block;
 
-    margin-inline-end: 1em;
-    padding: 0 0.3em;
+    margin-inline-end: 2px;
+    padding: 0 1px;
     border: 1px solid var(--waline-badge-color);
     border-radius: 2px;
     line-height: 1.2;
@@ -142,7 +142,7 @@
   .wl-comment-actions {
     display: flex;
     flex: 1;
-    justify-content: end;
+    justify-content: flex-end;
     line-height: 1;
 
     [dir='rtl'] & {
@@ -157,7 +157,7 @@
     display: inline-flex;
     align-items: center;
 
-    // padding: 4px;
+    padding: 1px;
     border: none;
 
     background: transparent;

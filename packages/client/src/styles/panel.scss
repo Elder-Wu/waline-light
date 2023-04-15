@@ -28,12 +28,14 @@
 }
 
 .wl-logout-btn {
-  padding: 5px 5px;
+  display: inline-block;
+  padding: 3px 8px;
   color: white;
-  font-size: 1px;
+  font-size: 12px;
   background: #212121;
   border-radius: 2px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .wl-avatar {
@@ -44,7 +46,6 @@
   width: var(--waline-avatar-size);
   height: var(--waline-avatar-size);
   margin: 0 auto;
-  border: var(--waline-border);
   border-radius: var(--waline-avatar-radius);
 
   @media (max-width: 720px) {
@@ -199,7 +200,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 5px;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .wl-actions {
